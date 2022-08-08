@@ -37,17 +37,17 @@ We are going to get our user to enter a username and password and then authentic
 - [ ] Returning to our `onSubmit` function, this will need a parameter that accepts the event. When we pass the function to our event listener, we do not call the function ( we don't use parenthesis). That means we can't pass arguments. However, as we are not calling the function, the event listener is calling it, it will pass the event for us! We should then build our function so that it accepts it.
 
 - [ ] Inside this function, we are going to use the browser's Fetch API to make a call to our server (our own server :grin:) We hosted this server when we ran `npm run dev`. We are going to make a different type of request for this project called a POST request. Here is the code for that.
-
   
-
-    fetch('http://localhost:3000', {
-    headers: {
-    Accept: 'application/json',
-    'Content-Type': 'application/json',
-    },
-    method: 'POST',
-    body: JSON.stringify(payload),
-    });
+```js
+fetch('http://localhost:3000', {
+headers: {
+Accept: 'application/json',
+'Content-Type': 'application/json',
+},
+method: 'POST',
+body: JSON.stringify(payload),
+});
+```
 
 - [ ] Looking at the above code, we are passing a value on the 'body' key. This is a variable that we need to create. It will be an object needs keys of username and password. (The server will look for these)
 
