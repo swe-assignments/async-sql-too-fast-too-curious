@@ -16,10 +16,10 @@ app.post('/', async (req, res) => {
 
   await setTimeout(() => {
     if (username === 'testUser' && password === 'Multiverse!') {
-      res.send('Login Successful!');
+      res.send({ loggedIn: true });
       return;
     }
-    res.send('Login not Successful');
+    res.send({ loggedIn: false });
     return;
   }, Math.random() * 4000);
 });

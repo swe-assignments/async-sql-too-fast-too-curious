@@ -51,9 +51,7 @@ We are going to get our user to enter a username and password and then authentic
 
 - [ ] Looking at the above code, we are passing a value on the 'body' key. This is a variable that we need to create. It will be an object needs keys of username and password. (The server will look for these)
 
-- [ ] Our server will either return an object with a key of status and either a value of 'Login successful.' or 'Login not successful.' depending on our input.
-
-- [ ] Based on this, we should update our DOM with the results.
+- [ ] Our server will either return an object with a key of loggedIn and an appropriate boolean response.  Based on this, we should update our DOM with the results.
 
   
 
