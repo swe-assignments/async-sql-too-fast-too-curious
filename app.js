@@ -1,8 +1,14 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-const { send } = require('process');
+const { populateDB } = require('./populateDB');
+
 const PORT = process.env.PORT || 3000;
+
+async function main() {
+  await populateDB();
+}
+main();
 
 app.use(express.static('public'));
 app.use(express.json());
