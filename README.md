@@ -40,12 +40,12 @@ We are going to get our user to enter a username and password and then authentic
   
 ```js
 fetch('http://localhost:3000', {
-headers: {
-Accept: 'application/json',
-'Content-Type': 'application/json',
-},
-method: 'POST',
-body: JSON.stringify(payload),
+  headers: {
+    Accept: 'application/json',
+    'Content-Type': 'application/json',
+  },
+  method: 'POST',
+  body: JSON.stringify(payload),
 });
 ```
 
