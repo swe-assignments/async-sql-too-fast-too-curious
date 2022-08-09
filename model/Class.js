@@ -1,10 +1,10 @@
-const { sequelize, Sequelize } = require('../db/db');
+// const { db, Sequelize } = require('../db');
 
-let Class = sequelize.define('class', {
-  title: Sequelize.STRING,
-  startTime: Sequelize.STRING,
-});
+// let Class = db.define('class', {
+//   title: Sequelize.STRING,
+//   startTime: Sequelize.STRING,
+// });
 
-module.exports = {
-  Class,
-};
+// module.exports = {
+//   Class,
+// };

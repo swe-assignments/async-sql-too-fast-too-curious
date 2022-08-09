@@ -1,12 +1,13 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-const { populateDB } = require('./populateDB');
+const { buildDatabase } = require('./buildDatabase');
+const { queryDatabase } = require('./queryDatabase');
 
 const PORT = process.env.PORT || 3000;
 
 async function main() {
-  await populateDB();
+  await buildDatabase();
 }
 main();
 
@@ -19,15 +20,16 @@ app.get('/', (req, res) => {
 
 app.post('/', async (req, res) => {
   const { username, password } = req.body;
+  let payload = await queryDatabase(username, password);
 
   await setTimeout(() => {
-    if (username === 'testUser' && password === 'Multiverse!') {
-      res.send({ loggedIn: true });
+    if (payload) {
+      res.send({ payload });
       return;
     }
     res.send({ loggedIn: false });
     return;
-  }, Math.random() * 4000);
+  }, Math.random() * 1000);
 });
 
 app.listen(PORT, () => {
