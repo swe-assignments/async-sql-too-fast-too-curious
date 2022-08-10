@@ -21,9 +21,9 @@ async function login(e) {
       body: JSON.stringify(payload),
     });
     let body = await response.json();
-    let { user, city } = body.payload;
-    console.log(user, city);
-    content.innerText = `User: ${user} - City: ${city}`;
+    let { username, city } = body.payload;
+    console.log(username, city);
+    content.innerText = `User: ${username} - City: ${city}`;
   } catch (err) {
     console.log(err);
   }
